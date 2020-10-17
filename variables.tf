@@ -27,7 +27,7 @@ variable "subnet" {
 }
 
 variable "subnet2" {
-  type = string
+  type    = string
   default = "subnet-60ae0b06"
 }
 

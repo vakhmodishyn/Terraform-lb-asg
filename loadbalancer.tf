@@ -22,9 +22,9 @@ resource "aws_security_group" "balancer" {
 # Create the Application Load Balancer for our Autoscaling Group “PlayQ-2019"
 resource "aws_lb" "PlayQ-2019" {
   name               = "PlayQ-2019"
-  internal = false
+  internal           = false
   load_balancer_type = "application"
-  security_groups = [aws_security_group.balancer.id]
+  security_groups    = [aws_security_group.balancer.id]
   #subnets = [var.subnet]
   access_logs {
     bucket = "test"
@@ -32,7 +32,7 @@ resource "aws_lb" "PlayQ-2019" {
   subnet_mapping {
     subnet_id = var.subnet
   }
-subnet_mapping {
+  subnet_mapping {
     subnet_id = var.subnet2
   }
 }
